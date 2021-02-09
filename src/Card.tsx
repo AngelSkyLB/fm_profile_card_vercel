@@ -1,5 +1,3 @@
-interface CardProps {}
-
 const Card = () => {
 	const analytics = [
 		{ value: '80K', title: 'Followers' },
@@ -22,7 +20,7 @@ const Card = () => {
 				<div className='separator' />
 				<div className='card-footer'>
 					{analytics.map((item) => (
-						<div className='item'>
+						<div key={item.title} className='item'>
 							<div className='item-value'>{item.value}</div>
 							<div className='item-title text-secondary'>{item.title}</div>
 						</div>
