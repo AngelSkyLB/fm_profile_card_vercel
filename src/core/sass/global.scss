@@ -1,0 +1,146 @@
+//Colors
+$dark_cyan: hsl(185, 75%, 39%);
+$dark_blue: hsl(229, 23%, 23%);
+$dark_gray: hsl(227, 10%, 46%);
+$neutral: hsl(0, 0%, 59%);
+
+//Fonts
+$primary-font: 'Kumbh Sans', sans-serif;
+
+.text-secondary {
+	color: $dark_gray;
+}
+
+html,
+body {
+	padding: 0px;
+	margin: 0px;
+	font-family: $primary-font;
+}
+
+#Content {
+	height: 100vh;
+	width: 100vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#Background {
+	top: 0px;
+	left: 0px;
+	position: fixed;
+	background-color: $dark_cyan;
+	height: 100vh;
+	width: 100vw;
+	overflow: hidden;
+	z-index: -9999999;
+
+	& #top {
+		position: inherit;
+		transform: rotate(180deg);
+		top: -50vh;
+		left: -50vw;
+		background-image: url('./../assets/bg-pattern-top.svg');
+		height: 100vh;
+		width: 100vw;
+	}
+
+	#bottom {
+		position: inherit;
+		top: 50vh;
+		left: 50vw;
+		background-image: url('./../assets/bg-pattern-bottom.svg');
+		height: 100vh;
+		width: 100vw;
+	}
+}
+
+#Card {
+	background-image: url('./../assets/bg-pattern-card.svg');
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	border-radius: 15px;
+	height: 350px;
+	width: 350px;
+
+	& .content {
+		margin-top: 100px;
+		background-color: #fff;
+		border-bottom-left-radius: 15px;
+		border-bottom-right-radius: 15px;
+		// border: 1px solid black;
+
+		.card-header {
+			// border: 1px solid black;
+			height: 50px;
+			display: flex;
+			justify-content: center;
+			margin-bottom: 20px;
+
+			& #profile-img {
+				position: relative;
+				top: -50px;
+				background-image: url('./../assets/image-victor.jpg');
+				background-position: center;
+				background-size: cover;
+				border: 5px solid white;
+				border-radius: 50%;
+				height: 100px;
+				width: 100px;
+			}
+		}
+
+		.card-body {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			height: 100px;
+
+			& .user {
+				margin: 10px 0px;
+				font-size: 20px;
+				font-weight: bold;
+
+				& .user-age {
+					margin-left: 10px;
+					font-weight: normal;
+				}
+			}
+
+			& .user-city {
+				margin: 10px 0px;
+				font-size: 18px;
+			}
+		}
+
+		.separator {
+			background-color: $neutral;
+			opacity: 0.5;
+			height: 1px;
+			width: 100%;
+		}
+
+		.card-footer {
+			display: flex;
+			align-items: center;
+			justify-content: space-around;
+			height: 100px;
+
+			& .item {
+				text-align: center;
+
+				& .item-value {
+					font-size: 20px;
+					font-weight: bold;
+				}
+
+				& .item-title {
+					font-size: 16px;
+					font-weight: normal;
+					margin-top: 10px;
+				}
+			}
+		}
+	}
+}
